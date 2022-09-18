@@ -1,0 +1,12 @@
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\bin\Debug\ZaloMessage.exe.config
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\bin\Debug\ZaloMessage.exe
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\bin\Debug\ZaloMessage.pdb
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.Properties.Resources.resources
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.exe
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.pdb
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.Main.resources
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\bin\Debug\WebDriver.dll
+C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
