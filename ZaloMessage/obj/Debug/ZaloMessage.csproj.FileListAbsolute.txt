@@ -10,3 +10,15 @@ C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.pdb
 C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.Main.resources
 C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\bin\Debug\WebDriver.dll
 C:\Users\Admin\Desktop\ZaloMessage\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.exe.config
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.exe
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.pdb
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\WebDriver.dll
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csprojAssemblyReference.cache
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.Main.resources
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.Properties.Resources.resources
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.GenerateResource.cache
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CoreCompileInputs.cache
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.exe
+C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.pdb

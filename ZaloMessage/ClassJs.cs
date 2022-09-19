@@ -14,7 +14,10 @@ namespace ZaloMessage
         public const string TEN_NGUOI_DUNG = "conv-item-title__name";
         public const string CHAT_NOTIFY = "chat-notify";
         public const string CHAT_MESSAGE = "chat-message";
-        public const string MESSAGE_ACTIONS = "chat-message__actions__btn";
         public const string BTN_SHARE = "btn_ReceivedMsg_FWD";
+        public const string TXT_USER_SHARE = "txt_FWD_Search";
+        public const string ITEM_USER_SHARE = "create-group__item__name";
+        public const string BTN_CONFIRM_SHARE = "btn_FWD_FWD";
+        public const string BTN_CANCEL_SHARE = "btn_FWD_CXL";
     }
 }
