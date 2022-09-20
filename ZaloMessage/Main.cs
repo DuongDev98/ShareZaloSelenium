@@ -23,7 +23,7 @@ namespace ZaloMessage
         public Main()
         {
             InitializeComponent();
-            TopMost = true;
+            //TopMost = true;
 
             tmrProgressBar = new Timer();
             tmrProgressBar.Interval = 100;
@@ -34,7 +34,6 @@ namespace ZaloMessage
 
             btnMoZalo.Click += BtnMoZalo_Click;
             btnChiaSe.Click += BtnChiaSe_Click;
-            btnDung.Click += BtnDung_Click;
             btnFile.Click += BtnFile_Click;
             FormClosing += Main_FormClosing;
 
@@ -89,13 +88,15 @@ namespace ZaloMessage
                         timKiemDuoiLenTren = false;
                     }
                 }
-                while (timKiemDuoiLenTren && runChuongTrinh);
+                while (timKiemDuoiLenTren);
 
                 if (sb.ToString().Length > 0)
                 {
                     if (File.Exists(filePath)) File.Delete(filePath);
                     File.AppendAllText(filePath, sb.ToString());
                 }
+
+                ShowNotification("Xuất thành công");
             }
             catch (Exception ex)
             {
@@ -163,6 +164,10 @@ namespace ZaloMessage
                                 IWebElement element = lstUser.ElementAt(i);
                                 string text = element.FindElement(By.ClassName(ClassJs.TEN_NGUOI_DUNG)).Text;
 
+                                if (text == "TinGoc")
+                                {
+                                }
+
                                 //Kiểm tra có tin nhắn mới không
                                 var lstTemp = element.FindElements(By.ClassName(ClassJs.TIN_NHAN_MOI));
                                 if (lstTemp.Count == 0)
@@ -201,6 +206,7 @@ namespace ZaloMessage
                                     if (TinNhanMoiPopup != null)
                                     {
                                         actions.Click(TinNhanMoiPopup).Perform();
+                                        runSleep(5000);
                                     }
 
                                     bool hasNextMessage = false;
@@ -208,75 +214,90 @@ namespace ZaloMessage
                                     //tìm tin nhắn để chia sẻ
                                     do
                                     {
-                                        runSleep(1000);
-                                        var lstMessage = chromeDriver.FindElements(By.ClassName(ClassJs.CHAT_MESSAGE));
-
-                                        //chia sẻ tin nhắn
-                                        foreach (var messageItem in lstMessage)
+                                        try
                                         {
-                                            try
+                                            runSleep(1000);
+                                            var lstMessage = chromeDriver.FindElements(By.ClassName(ClassJs.CHAT_MESSAGE));
+
+                                            //chia sẻ tin nhắn
+                                            //bool shared = false;
+                                            foreach (var messageItem in lstMessage)
                                             {
-                                                if (!runChuongTrinh) break;
-                                                //hover
-                                                runSleep(1000);
-                                                actions.MoveToElement(messageItem).Perform();
-                                                //tìm biểu tượng chia sẻ
-
-                                                runSleep(1000);
-                                                IWebElement btnShare = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_SHARE + "']"));
-                                                if (btnShare != null)
+                                                try
                                                 {
-                                                    //click share
-                                                    actions.Click(btnShare).Perform();
-
-                                                    //chọn tên chia sẻ
-                                                    string temp = LayTenNhomChiaSeDen(text, dicFiles);
+                                                    if (!runChuongTrinh) break;
+                                                    lastMessage = messageItem;
+                                                    //hover
+                                                    runSleep(1000);
+                                                    actions.ScrollToElement(messageItem).Perform();
 
                                                     runSleep(1000);
-                                                    IWebElement txtSearchUser = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.TXT_USER_SHARE + "']"));
-                                                    txtSearchUser.SendKeys(temp);
+                                                    actions.MoveToElement(messageItem.FindElement(By.ClassName("chat-message__actionholder"))).Perform();
+                                                    //tìm biểu tượng chia sẻ
 
                                                     runSleep(2000);
-                                                    var lstUserShare = chromeDriver.FindElements(By.ClassName(ClassJs.ITEM_USER_SHARE));
-
-                                                    //thấy thì share, không thấy thì hủy
-                                                    bool shared = false;
-                                                    foreach (IWebElement itemUserShare in lstUserShare)
+                                                    IWebElement btnShare = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_SHARE + "']"));
+                                                    if (btnShare != null)
                                                     {
-                                                        if (itemUserShare.Text.Trim().ToLower() == temp)
+                                                        //shared = true;
+
+                                                        //click share
+                                                        actions.Click(btnShare).Perform();
+
+                                                        //chọn tên chia sẻ
+                                                        string temp = LayTenNhomChiaSeDen(text, dicFiles);
+
+                                                        runSleep(1000);
+                                                        IWebElement txtSearchUser = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.TXT_USER_SHARE + "']"));
+                                                        txtSearchUser.SendKeys(temp);
+
+                                                        runSleep(2000);
+                                                        var lstUserShare = chromeDriver.FindElements(By.ClassName(ClassJs.ITEM_USER_SHARE));
+
+                                                        //thấy thì share, không thấy thì hủy
+                                                        bool clickShare = false;
+                                                        foreach (IWebElement itemUserShare in lstUserShare)
                                                         {
-                                                            shared = true;
-                                                            actions.Click(itemUserShare).Perform();
-                                                            break;
+                                                            if (itemUserShare.Text.Trim().ToLower() == temp.ToLower())
+                                                            {
+                                                                clickShare = true;
+                                                                actions.Click(itemUserShare).Perform();
+                                                                break;
+                                                            }
                                                         }
-                                                    }
 
-                                                    runSleep(1000);
-                                                    IWebElement btnTemp = null;
-                                                    shared = false;
-                                                    if (shared)
-                                                    {
-                                                        btnTemp = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_CONFIRM_SHARE + "']"));
+                                                        runSleep(1000);
+                                                        IWebElement btnTemp = null;
+                                                        if (clickShare)
+                                                        {
+                                                            btnTemp = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_CONFIRM_SHARE + "']"));
+                                                        }
+                                                        else
+                                                        {
+                                                            btnTemp = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_CANCEL_SHARE + "']"));
+                                                        }
+                                                        actions.Click(btnTemp).Perform();
+
+                                                        runSleep(3000);
                                                     }
-                                                    else
-                                                    {
-                                                        btnTemp = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_CANCEL_SHARE + "']"));
-                                                    }
-                                                    actions.Click(btnTemp).Perform();
+                                                }
+                                                catch (Exception ex)
+                                                {
                                                 }
                                             }
-                                            catch (Exception ex)
+
+                                            //duyệt tin nhắn tiếp theo
+                                            if (lastMessage != null || !lstMessage.ElementAt(lstMessage.Count - 1).Equals(lastMessage))
                                             {
+                                                hasNextMessage = true;
+                                                actions.ScrollToElement(lastMessage).Perform();
+                                            }
+                                            else
+                                            {
+                                                hasNextMessage = false;
                                             }
                                         }
-
-                                        //duyệt tin nhắn tiếp theo
-                                        if (lastMessage != null || !lstMessage.ElementAt(lstMessage.Count - 1).Equals(lastMessage))
-                                        {
-                                            hasNextMessage = true;
-                                            actions.ScrollToElement(lastMessage).Perform();
-                                        }
-                                        else
+                                        catch (Exception ex1)
                                         {
                                             hasNextMessage = false;
                                         }
@@ -324,8 +345,7 @@ namespace ZaloMessage
 
             btnMoZalo.Enabled = chromeDriver == null;
             btnChiaSe.Enabled = !run && !btnMoZalo.Enabled;
-            btnDung.Enabled = run;
-            btnFile.Enabled = !run;
+            btnFile.Enabled = !run && !btnMoZalo.Enabled;
         }
 
         private string LayTenNhomChiaSeDen(string text, Dictionary<string, List<string>> dicFiles)
@@ -338,15 +358,15 @@ namespace ZaloMessage
                     {
                         if (key.EndsWith("giaydep.txt"))
                         {
-                            return "dương";
+                            return "ShareDuong";
                         }
                         else if (key.EndsWith("hangsale.txt"))
                         {
-                            return "dương";
+                            return "ShareDuong2";
                         }
                         else if (key.EndsWith("quanao.txt"))
                         {
-                            return "dương";
+                            return "ShareDuong3";
                         }
                     }
                 }
@@ -424,13 +444,14 @@ namespace ZaloMessage
                 //options
                 ChromeOptions options = new ChromeOptions();
                 options.AddArguments(@"--user-data-dir="+ Environment.ExpandEnvironmentVariables("%localappdata%") + @"\Google\Chrome\User Data");
-                options.AddArguments(@"--profile-directory=Default");
+                //options.AddArguments(@"--profile-directory=Default");
+                options.AddArguments(@"--profile-directory=Profile 3");
 
                 chromeDriver = new ChromeDriver(cService, options);
                 actions = new Actions(chromeDriver);
                 chromeDriver.Manage().Window.Maximize();
                 chromeDriver.Navigate().GoToUrl("https://chat.zalo.me/");
-
+                chromeDriver.ExecuteScript("document.body.style.zoom='80 %'");
                 ShowNotification("");
 
                 SetShareUi(false);

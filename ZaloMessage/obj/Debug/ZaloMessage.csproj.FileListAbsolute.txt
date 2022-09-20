@@ -35,3 +35,15 @@ F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CoreCompile
 F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
 F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.exe
 F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.pdb
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.exe.config
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.exe
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.pdb
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\bin\Debug\WebDriver.dll
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.Main.resources
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.Properties.Resources.resources
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.exe
+C:\Users\Admin\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.pdb
