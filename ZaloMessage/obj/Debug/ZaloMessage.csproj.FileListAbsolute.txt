@@ -22,3 +22,16 @@ C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\Zalo
 C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
 C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.exe
 C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.pdb
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.exe.config
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.exe
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\bin\Debug\ZaloMessage.pdb
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\bin\Debug\WebDriver.dll
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.AssemblyReference.cache
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.SuggestedBindingRedirects.cache
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.Main.resources
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.Properties.Resources.resources
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.GenerateResource.cache
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CoreCompileInputs.cache
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.csproj.CopyComplete
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.exe
+F:\PHUONG\ShareZaloSelenium\ZaloMessage\obj\Debug\ZaloMessage.pdb
