@@ -15,9 +15,11 @@ namespace ZaloMessage
         public const string CHAT_NOTIFY = "chat-notify";
         public const string CHAT_MESSAGE = "chat-message";
         public const string BTN_SHARE = "btn_ReceivedMsg_FWD";
+        public const string BTN_LAST_SHARE = "btn_LastReceivedMsg_FWD";
         public const string TXT_USER_SHARE = "txt_FWD_Search";
         public const string ITEM_USER_SHARE = "create-group__item__name";
         public const string BTN_CONFIRM_SHARE = "btn_FWD_FWD";
         public const string BTN_CANCEL_SHARE = "btn_FWD_CXL";
+        public const string MESSAGE_ACTION_HOLDER = "chat-message__actionholder";
     }
 }
