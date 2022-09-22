@@ -216,28 +216,71 @@ namespace ZaloMessage
                                     }
 
                                     bool hasNextMessage = false;
+                                    int counter = 0;
                                     //tìm tin nhắn để chia sẻ
                                     do
                                     {
-                                        runSleep(1000);
+                                        counter++;
+
+                                        runSleep(2000);
                                         var messageCollection = chromeDriver.FindElements(By.ClassName(ClassJs.CHAT_MESSAGE));
 
                                         IWebElement messageItem = null;
+
                                         //chia sẻ tin nhắn
+                                        int demTinMoi = 0;
+                                        bool shared = false;
                                         for (int iMsgItem = 0; iMsgItem < messageCollection.Count; iMsgItem++)
                                         {
                                             if (!runChuongTrinh) break;
                                             messageItem = messageCollection.ElementAt(iMsgItem);
-                                            //hover
-                                            runSleep(1000);
-                                            actions.ScrollToElement(messageItem).Perform();
 
-                                            runSleep(1000);
-                                            actions.MoveToElement(messageItem.FindElement(By.ClassName(ClassJs.MESSAGE_ACTION_HOLDER))).Perform();
-                                            //tìm biểu tượng chia sẻ
+                                            if (!shared)
+                                            {
+                                                //tin nhắn mới 1 ảnh, 1 ảnh 1 tin nhắn
+                                                shared = messageItem.FindElements(By.ClassName("-highlight")).Count > 0;
+                                            }
 
-                                            runSleep(1000);
-                                            IWebElement btnShare = chromeDriver.FindElement(By.CssSelector("[data-id='" + (iMsgItem == messageCollection.Count - 1 ? ClassJs.BTN_LAST_SHARE : ClassJs.BTN_SHARE) + "']"));
+                                            if (!shared)
+                                            {
+                                                //1 tin nhắn + nhiều ảnh
+                                                shared = messageItem.FindElements(By.ClassName("highlighted")).Count > 0;
+                                            }
+
+                                            if (!shared) continue;
+
+                                            demTinMoi++;
+
+                                            if (counter > 1 || (counter == 1 && demTinMoi > 1))
+                                            {
+                                                //hover
+                                                runSleep(1000);
+                                                actions.ScrollToElement(messageItem).Perform();
+
+                                                runSleep(1000);
+                                                actions.MoveToElement(messageItem.FindElement(By.ClassName(ClassJs.MESSAGE_ACTION_HOLDER))).Perform();
+                                                //tìm biểu tượng chia sẻ
+                                            }
+
+                                            runSleep(2000);
+                                            IWebElement btnShare = null;
+
+                                            try
+                                            {
+                                                btnShare = chromeDriver.FindElement(By.CssSelector("[data-id='" +ClassJs.BTN_SHARE+ "']"));
+                                            }
+                                            catch (Exception exShare1)
+                                            {
+                                                try
+                                                {
+                                                    btnShare = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.BTN_LAST_SHARE + "']"));
+                                                }
+                                                catch (Exception exShare2)
+                                                {
+                                                    btnShare = null;
+                                                }
+                                            }
+
                                             if (btnShare != null)
                                             {
                                                 //click share
@@ -246,11 +289,11 @@ namespace ZaloMessage
                                                 //chọn tên chia sẻ
                                                 string temp = LayTenNhomChiaSeDen(text, dicFiles);
 
-                                                runSleep(1000);
+                                                runSleep(500);
                                                 IWebElement txtSearchUser = chromeDriver.FindElement(By.CssSelector("[data-id='" + ClassJs.TXT_USER_SHARE + "']"));
                                                 txtSearchUser.SendKeys(temp);
 
-                                                runSleep(2000);
+                                                runSleep(500);
                                                 var lstUserShare = chromeDriver.FindElements(By.ClassName(ClassJs.ITEM_USER_SHARE));
 
                                                 //thấy thì share, không thấy thì hủy
@@ -265,8 +308,7 @@ namespace ZaloMessage
                                                     }
                                                 }
 
-                                                clickShare = false;
-                                                runSleep(1000);
+                                                runSleep(500);
                                                 IWebElement btnTemp = null;
                                                 if (clickShare)
                                                 {
@@ -278,7 +320,7 @@ namespace ZaloMessage
                                                 }
                                                 actions.Click(btnTemp).Perform();
 
-                                                runSleep(2000);
+                                                runSleep(3000);
                                             }
                                         }
 
@@ -345,6 +387,7 @@ namespace ZaloMessage
 
         private string LayTenNhomChiaSeDen(string text, Dictionary<string, List<string>> dicFiles)
         {
+            // sửa danh sách nhóm chia sẻ đến
             foreach (string key in dicFiles.Keys)
             {
                 foreach (string value in dicFiles[key])
@@ -361,7 +404,9 @@ namespace ZaloMessage
                         }
                         else if (key.EndsWith("quanao.txt"))
                         {
-                            return "shareduong3";
+                            return "🎯 Quần Áo, Váy Set Thảo Phương 🍀🍀🍀";
+
+
                         }
                     }
                 }
