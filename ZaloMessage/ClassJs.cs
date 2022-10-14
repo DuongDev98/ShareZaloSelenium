@@ -21,5 +21,8 @@ namespace ZaloMessage
         public const string BTN_CONFIRM_SHARE = "btn_FWD_FWD";
         public const string BTN_CANCEL_SHARE = "btn_FWD_CXL";
         public const string MESSAGE_ACTION_HOLDER = "chat-message__actionholder";
+        public const string HIGHLIGHT1 = "-highlight";
+        public const string HIGHLIGHT2 = "highlighted";
+        public const string ITEM_TIME = "conv-item-title__more";
     }
 }

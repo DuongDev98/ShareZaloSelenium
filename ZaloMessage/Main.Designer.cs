@@ -39,7 +39,7 @@ namespace ZaloMessage
             // 
             // btnMoZalo
             // 
-            this.btnMoZalo.Location = new System.Drawing.Point(13, 45);
+            this.btnMoZalo.Location = new System.Drawing.Point(12, 12);
             this.btnMoZalo.Name = "btnMoZalo";
             this.btnMoZalo.Size = new System.Drawing.Size(104, 30);
             this.btnMoZalo.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace ZaloMessage
             // 
             // btnChiaSe
             // 
-            this.btnChiaSe.Location = new System.Drawing.Point(123, 45);
+            this.btnChiaSe.Location = new System.Drawing.Point(122, 12);
             this.btnChiaSe.Name = "btnChiaSe";
             this.btnChiaSe.Size = new System.Drawing.Size(104, 30);
             this.btnChiaSe.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace ZaloMessage
             // 
             // btnFile
             // 
-            this.btnFile.Location = new System.Drawing.Point(343, 45);
+            this.btnFile.Location = new System.Drawing.Point(342, 12);
             this.btnFile.Name = "btnFile";
             this.btnFile.Size = new System.Drawing.Size(191, 30);
             this.btnFile.TabIndex = 3;
@@ -66,7 +66,7 @@ namespace ZaloMessage
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(13, 12);
+            this.progressBar.Location = new System.Drawing.Point(12, 45);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(521, 23);
             this.progressBar.TabIndex = 4;
@@ -75,15 +75,14 @@ namespace ZaloMessage
             // 
             this.lblThongBao.BackColor = System.Drawing.Color.PapayaWhip;
             this.lblThongBao.ForeColor = System.Drawing.Color.Red;
-            this.lblThongBao.Location = new System.Drawing.Point(12, 78);
+            this.lblThongBao.Location = new System.Drawing.Point(12, 71);
             this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.Size = new System.Drawing.Size(522, 23);
+            this.lblThongBao.Size = new System.Drawing.Size(521, 57);
             this.lblThongBao.TabIndex = 5;
-            this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnDung
             // 
-            this.btnDung.Location = new System.Drawing.Point(233, 45);
+            this.btnDung.Location = new System.Drawing.Point(232, 12);
             this.btnDung.Name = "btnDung";
             this.btnDung.Size = new System.Drawing.Size(104, 30);
             this.btnDung.TabIndex = 6;
@@ -94,7 +93,7 @@ namespace ZaloMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 108);
+            this.ClientSize = new System.Drawing.Size(540, 132);
             this.Controls.Add(this.btnDung);
             this.Controls.Add(this.lblThongBao);
             this.Controls.Add(this.progressBar);
