@@ -1,13 +1,1 @@
-﻿--02/12/2022 15:54
-   at ZaloMessage.Main.GetBaseData(IWebElement element)
-   at ZaloMessage.Main.<BtnChiaSe_Click>b__9_0()--02/12/2022 16:11
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)
-   at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
-   at ZaloMessage.Main.<BtnChiaSe_Click>b__9_0() in C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\Main.cs:line 323--02/12/2022 16:12
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)
-   at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
-   at ZaloMessage.Main.<BtnChiaSe_Click>b__9_0() in C:\Users\PC.DESKTOP-LHETLS5\Desktop\ShareZaloSelenium\ZaloMessage\Main.cs:line 323
+﻿

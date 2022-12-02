@@ -174,6 +174,7 @@ namespace ZaloMessage
                             IReadOnlyCollection<IWebElement> userCollection = chromeDriver.FindElements(By.ClassName(ClassJs.ITEM_MESSAGE));
                             for (int i = userCollection.Count - 1; i >= 0; i--)
                             {
+                                if (!runChuongTrinh) break;
                                 shared = false;
                                 IWebElement element = userCollection.ElementAt(i);
                                 string text = element.FindElement(By.ClassName(ClassJs.TEN_NGUOI_DUNG)).Text;
@@ -435,7 +436,7 @@ namespace ZaloMessage
         {
             StringBuilder data = new StringBuilder();
             var temp = element.FindElements(By.TagName("img"));
-            if (temp.Count > 0)
+            if (temp != null && temp.Count > 0)
             {
                 foreach (var img in temp)
                 {
