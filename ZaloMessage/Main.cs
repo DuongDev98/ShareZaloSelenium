@@ -111,7 +111,7 @@ namespace ZaloMessage
             }
             catch (Exception ex)
             {
-                ShowNotification(ex.Message);
+                ShowNotification(ex.StackTrace);
             }
         }
 
@@ -344,7 +344,7 @@ namespace ZaloMessage
                 }
                 catch (Exception ex)
                 {
-                    ShowNotification(ex.Message);
+                    ShowNotification(ex.StackTrace);
                     File.AppendAllText(Directory.GetCurrentDirectory()+@"/log.txt", "--" + DateTime.Now.ToString("dd/MM/yyyy HH:mm") + Environment.NewLine + ex.StackTrace, Encoding.UTF8);
                     Invoke(new MethodInvoker(() =>
                     {
@@ -529,7 +529,7 @@ namespace ZaloMessage
             }
             catch (Exception ex)
             {
-                ShowNotification(ex.Message);
+                ShowNotification(ex.StackTrace);
             }
         }
 

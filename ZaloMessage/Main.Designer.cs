@@ -77,7 +77,7 @@ namespace ZaloMessage
             this.lblThongBao.ForeColor = System.Drawing.Color.Red;
             this.lblThongBao.Location = new System.Drawing.Point(12, 71);
             this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.Size = new System.Drawing.Size(521, 57);
+            this.lblThongBao.Size = new System.Drawing.Size(521, 391);
             this.lblThongBao.TabIndex = 5;
             // 
             // btnDung
@@ -93,7 +93,7 @@ namespace ZaloMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 132);
+            this.ClientSize = new System.Drawing.Size(540, 471);
             this.Controls.Add(this.btnDung);
             this.Controls.Add(this.lblThongBao);
             this.Controls.Add(this.progressBar);
